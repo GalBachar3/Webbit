@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Linq;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
+using Mongo
 using Server.Models;
 using Server.ViewModels;
 
@@ -11,7 +10,7 @@ namespace Server.Logic
     public class UserLogic
     {
         // TODO: fix this
-        protected MongoCollection<User> Collection { get; }
+        protected IMongoCollection<User> Collection { get; }
 
         public UserLogic()
         {
