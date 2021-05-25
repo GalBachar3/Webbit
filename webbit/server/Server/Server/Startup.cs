@@ -13,7 +13,7 @@ namespace Server
     {
         public void Configuration(IAppBuilder appBuilder)
         {
-            // TODO: make sure the client recognizes the server
+            // TODO: make sure the client recognizes the server - add app setting of clientpath
             var config = new HttpConfiguration();
 
             config.MapHttpAttributeRoutes();
