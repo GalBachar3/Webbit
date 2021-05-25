@@ -10,15 +10,15 @@ namespace Server.Logic
 {    
     public class UserLogic
     {
-        // TODO: fix this
-        protected MongoCollection<User> Collection { get; }
+        // TODO: fix this - change to Imongocollection
+        protected IMongoCollection<User> Collection { get; }
 
         public UserLogic()
         {
             // TODO: fix this
             var client = new MongoClient(ConfigurationManager.AppSettings["MongoURL"]);
-            var server = client.GetServer();
-            Collection = server.GetDatabase("webbit").GetCollection<User>("users");
+            //var server = client.GetServer();
+            Collection = client.GetDatabase("webbit").GetCollection<User>("users");
         }
 
         public UserViewModel Login(LoginViewModel loginViewModel)
