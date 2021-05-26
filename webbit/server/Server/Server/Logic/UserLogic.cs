@@ -15,7 +15,7 @@ namespace Server.Logic
 
         public UserLogic()
         {
-            // TODO: fix this
+            // TODO: fix this - remove server
             var client = new MongoClient(ConfigurationManager.AppSettings["MongoURL"]);
             //var server = client.();
             Collection = client.GetDatabase("webbit").GetCollection<User>("users");
