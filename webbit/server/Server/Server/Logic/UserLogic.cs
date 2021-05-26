@@ -29,8 +29,8 @@ namespace Server.Logic
             
             if (user == null)
             {
-                // TODO: fix this
-                throw new Exception("Not cool");
+                // TODO: fix this - throw specific exception for exception filter
+                throw new NullReferenceException();
             }
 
             return new UserViewModel(user);

@@ -17,6 +17,7 @@ namespace Server
             var config = new HttpConfiguration();
 
             config.MapHttpAttributeRoutes();
+            config.Filters.Add(new ExceptionFilter());
             appBuilder.UseWebApi(config);
 
             var physicalFileSystem = new PhysicalFileSystem(ConfigurationManager.AppSettings["ClientPath"]);
