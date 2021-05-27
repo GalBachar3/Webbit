@@ -17,12 +17,15 @@ namespace Server.Logic
         {
             // TODO: fix this - remove server
             var client = new MongoClient(ConfigurationManager.AppSettings["MongoURL"]);
-            //var server = client.();
+
             Collection = client.GetDatabase("webbit").GetCollection<User>("users");
         }
 
         public UserViewModel Login(LoginViewModel loginViewModel)
         {
+            //Console.WriteLine(loginViewModel.Password);
+            //Console.Write(loginViewModel.UserName);
+            
             var user =  Collection.AsQueryable().SingleOrDefault(x =>
                 x.Password == loginViewModel.Password &&
                 x.Username == loginViewModel.UserName);

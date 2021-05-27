@@ -17,7 +17,7 @@ angular.module('webbit.services')
 
         return {
             login ({username = '', password = ''} = {}) {
-                return $http.post('/auth/login', {username, password})
+                return $http.post('api/auth/login', {username, password})
                     .then(({data}) => {
                         setUser(data);
                         currentUser = data;
